@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Presente Completo</title>
+
+<!-- Fonte romântica página 1 -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+<style>
+/* ===== CONTROLE DE PÁGINAS ===== */
+body{
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+  background:black;
+}
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
+/* ================= PAGINA 1 CSS ORIGINAL ================= */
+.p1 body{
+  margin:0;
+  padding:0;
+} 
+
+.p1{
+  background:#f3caca;
+  font-family:'Dancing Script', cursive;
+  color:white;
+  min-height:100vh;
+  position:relative;
+  z-index:2;
+}
+
+header{
+  text-align:center;
+  padding:30px 10px;
+}
+
+header h1{
+  margin:0;
+  font-size:2.4rem;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:20px;
+  padding:30px;
+}
+
+.card{
+  border-radius:20px;
+  padding:25px;
+  text-align:center;
+  cursor:pointer;
+  transition:.4s;
+  font-size:1.3rem;
+}
+
+.card:nth-child(1){background:#472a16;}
+.card:nth-child(2){background:#f3c86d;}
+.card:nth-child(3){background:#598dee;}
+.card:nth-child(4){background:#1dd1a1;}
+.card:nth-child(5){background:#a29bfe;}
+.card:nth-child(6){background:#ff9ff3;}
+.card:nth-child(7){background:#54a0ff;}
+.card:nth-child(8){background:#5f27cd;}
+.card:nth-child(9){background:#1f8611;}
+.card:nth-child(10){background:#c07950;}
+.card:nth-child(11){background:#da5677;}
+.card:nth-child(12){background:#58265f;}
+.card:nth-child(13){background:#f03c3c;}
+.card:nth-child(14){background:#924488;}
+.card:nth-child(15){background:#b46317;}
+.card:nth-child(16){background:#1f684c;}
+.card:nth-child(17){background:#cd5c27;}
+.card:nth-child(18){background:#dd1406;}
+.card:nth-child(19){background:#2e86de;}
+.card:nth-child(20){background:#1d174e;}
+.card:nth-child(21){background:#00b894;}
+.card:nth-child(22){background:#f7b731;}
+.card:nth-child(23){background:#ff9ff3;}
+.card:nth-child(24){background:#cbc7e9;}
+.card:nth-child(25){background:#eb05b1;}
+.card:nth-child(26){background:#68865a;}
+.card:nth-child(27){background:#f8c291;}
+.card:nth-child(28){background:#e056fd;}
+.card:nth-child(29){background:#ff6b6b;}
+.card:nth-child(30){background:#feca57;}
+.card:nth-child(31){background:#4f1874;}
+.card:nth-child(32){background:#1dd1a1;}
+.card:nth-child(33){background:#a29bfe;}
+.card:nth-child(34){background:#ff9ff3;}
+.card:nth-child(35){background:#54a0ff;}
+.card:nth-child(36){background:#5f27cd;}
+.card:nth-child(37){background:#233021;}
+.card:nth-child(38){background:#c07950;}
+.card:nth-child(39){background:#da5677;}
+.card:nth-child(40){background:#7a5180;}
+.card:nth-child(41){background:#b85d69;}
+.card:nth-child(42){background:#924488;}
+.card:nth-child(43){background:#af9276a8;}
+.card:nth-child(44){background:#124141;}
+.card:nth-child(45){background:#910c0c;}
+
+.card:hover{
+  transform:scale(1.1) rotate(1deg);
+  box-shadow:0 0 20px rgba(255,255,255,.4);
+}
+
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:20px;
+  animation:subir 6s linear forwards;
+  pointer-events:none;
+  z-index:9999;
+}
+
+@keyframes subir{0%{
+  transform:translateY(0) scale(1);opacity:1;}100%{
+  transform:translateY(-110vh) scale(1.5);opacity:0;}}
+
+.p1 {
+  position:relative;
+  z-index:2;
+}
+
+/* ================= PAGINA 2 CSS ORIGINAL ================= */
+.p2{
+  margin:0;
+  overflow:hidden;
+  background:#0b0b0f;
+  font-family:'Segoe UI',sans-serif;
+  color:white;
+  height:100vh;
+}
+
+.container{
+  position:relative;
+  width:100vw;
+  height:100vh;
+}
+
+.msg{
+  position:absolute;
+  font-size:18px;
+  opacity:.9;
+  animation:flutuar 10s linear forwards;
+}
+
+@keyframes flutuar{0%{transform:translateY(30px) rotate(0deg);opacity:0;}20%{opacity:1;}100%{transform:translateY(-80px) rotate(6deg);opacity:0;}}
+@keyframes piscar{from{opacity:.3;transform:scale(1);}to{opacity:1;transform:scale(1.4);} }
+
+.galaxia{
+  position:fixed;
+  top:50%;
+  left:50%;
+  width:700px;
+  height:700px;
+  transform:translate(-50%,-50%) rotate(20deg);
+  background:radial-gradient(circle,rgba(255,255,255,0.12) 0%,rgba(150,170,255,0.10) 25%,rgba(120,100,255,0.06) 45%,transparent 70%);filter:blur(50px);pointer-events:none;z-index:-1;}
+
+  @keyframes cadente{from{transform:translate(0,0) rotate(45deg);opacity:1;}to{transform:translate(400px,200px) rotate(45deg);opacity:0;}}
+
+.p2 .galaxia,
+.p2 .msg {
+  pointer-events:none;
+}
+
+/* ================= PAGINA 3 CSS ORIGINAL ================= */
+.p3{
+  margin:0;
+  overflow:hidden;
+  background:black;
+  font-family:'Segoe UI',sans-serif;
+  height:100vh;
+}
+
+.universe{
+  position:relative;
+  width:100vw;
+  height:100vh;
+  background:radial-gradient(circle at center,#0f163b 0%,#000 70%);
+}
+
+.star{
+  position:absolute;
+  border-radius:50%;
+  background:white;
+  animation:twinkle 4s infinite ease-in-out;
+}
+
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.8);}50%{opacity:1;transform:scale(1.3);} }
+
+.galaxy{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:600px;
+  height:600px;
+  transform:translate(-50%,-50%) rotate(20deg);
+  background:radial-gradient(circle,rgba(255,255,255,.15) 0%,rgba(140,170,255,.12) 20%,rgba(100,80,255,.08) 40%,transparent 70%);
+  filter:blur(40px);
+}
+
+.title{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:white;
+  text-align:center;
+  z-index:2;
+}
+
+.title p{
+  opacity:.7;
+  font-size:18px;
+  text-shadow:0 0 10px rgba(255,255,255,.4);
+}
+
+.lua{
+  position:fixed;
+  top:40px;
+  right:40px;
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#fff 0%,#ddd 40%,#bbb 70%,#999 100%);
+  animation:brilhoLua 8s infinite ease-in-out;
+  box-shadow:0 0 50px rgba(255,255,255,.9),0 0 60px rgba(255,255,255,.2),inset 10px 8px 0 rgba(0,0,0,.15),inset -15px -10px 0 rgba(0,0,0,.12),inset 20px -5px 0 rgba(0,0,0,.1),inset -8px 20px 0 rgba(0,0,0,.08),inset 5px -18px 0 rgba(0,0,0,.1);
+} 
+
+.lua::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  pointer-events:none;
+  background:radial-gradient(circle at 30% 30%,rgba(71,70,70,.15) 8px,transparent 10px),radial-gradient(circle at 65% 40%,rgba(92,90,90,.12) 6px,transparent 8px),radial-gradient(circle at 50% 70%,rgba(83,82,82,.1) 7px,transparent 9px),radial-gradient(circle at 75% 75%,rgba(83,83,83,.08) 5px,transparent 7px),radial-gradient(circle at 20% 60%,rgba(80,80,80,.12) 6px,transparent 8px),radial-gradient(circle at 80% 25%,rgba(75,75,75,.1) 7px,transparent 9px);
+} 
+
+@keyframes brilhoLua{0%,100%{transform:scale(1);box-shadow:0 0 20px rgba(255,255,255,.5),0 0 60px rgba(200,220,255,.25);}50%{transform:scale(1.06);box-shadow:0 0 40px rgba(255,255,255,.8),0 0 90px rgba(180,210,255,.4);} }
+
+.sol{position:fixed;
+  top:50px;
+  left:50px;
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:radial-gradient(circle,#fff6b0 0%,#ffd36b 30%,#ff9a00 60%,#ff5e00 85%,transparent 100%);
+  animation:brilhoSol 3s infinite ease-in-out;
+  box-shadow:0 0 40px rgba(255,180,50,.9),0 0 90px rgba(255,140,0,.6),0 0 140px rgba(255,80,0,.4);
+}
+
+@keyframes brilhoSol{0%,100%{transform:scale(1);box-shadow:0 0 40px rgba(255,180,50,.9),0 0 90px rgba(255,140,0,.6),0 0 140px rgba(255,80,0,.4);}50%{transform:scale(1.08);box-shadow:0 0 60px rgba(255,200,80,1),0 0 120px rgba(255,150,0,.8),0 0 180px rgba(255,90,0,.6);} }
+</style>
+</head>
+
+<body>
+
+<audio id="musica" autoplay loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div id="start" style="
+position:fixed;
+inset:0;
+background: radial-gradient(circle at center, #0f163b 0%, #000 70%);
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+z-index:99999;
+font-family:'Dancing Script', cursive;
+font-size:28px;">
+Nha mor, sempre que sentir que o mundo está pesado demais. Clique aqui para começar 💖
+</div>
+
+<script>
+const start = document.getElementById("start");
+const player = document.getElementById("musica");
+  
+start.onclick = () => {
+  player.play();
+  start.remove();
+};
+</script>
+
+</script>
+<!-- ================= PAGINA 1 ================= -->
+<section id="p1" class="page active p1">
+<header>
+<h1>Coisas que amo em você ❤️</h1>
+</header>
+<section class="grid">
+<div class="card">👀 Seus olhos castanhos e doces</div>
+<div class="card">🌀 Seu cabelo cacheado</div>
+<div class="card">💪 Sua força</div>
+<div class="card">😊 Seu sorriso</div>
+<div class="card">🤍 Seu jeito de ser único</div>
+<div class="card">🤗 Seu abraço</div>
+<div class="card">🔥 Sua determinação</div>
+<div class="card">❣️ Seu carinho</div>
+<div class="card">🚜 Seu ronquinho</div>
+<div class="card">🤎 A cor da sua pele</div>
+<div class="card">💕 O jeito que me faz se sentir segura</div>
+<div class="card">😍 A maneira como me olha</div>
+<div class="card">💓 O som da sua voz que faz meu coração acelerar</div>
+<div class="card">🎯 Seu Hiperfoco</div>
+<div class="card">🥰 Sua gentileza</div>
+<div class="card">💖 Seu Coração</div>
+<div class="card">💚 O jeito que cuida de todos e se preocupa</div>
+<div class="card">🫦 Sua safadeza</div>
+<div class="card">💜 Os cilhos dos seus olhos</div>
+<div class="card">💙 Sua sombrancelha</div>
+<div class="card">💗 O jeito como trata as pessoas</div>
+<div class="card">💝 Seu jeito de me fazer sentir a pessoa mais sortuda do mundo</div>
+<div class="card">⛹🏽‍♂️ Como ama futebol</div>
+<div class="card">🥹 Quando fala do futuro e me inclui</div>
+<div class="card">💖 Quando diz que me ama pela madrugada</div>
+<div class="card">🍲 Como ama cachupa</div>
+<div class="card">🧴 Como ama perfumes</div>
+<div class="card">😍 Sua responsabilidade</div>
+<div class="card">🥇 Seu comprometimento</div>
+<div class="card">😎 Sua maneira de resolver problemas</div>
+<div class="card">💞 Como fica manhoso qnd tem gripe masculina ou qnd esta com soninho</div>
+<div class="card">🤩 Como gosta de Animes</div>
+<div class="card">😏 Como ama minha bunda</div>
+<div class="card">👀 Seu foco quando quer algo</div>
+<div class="card">🌷 Como me elogias mesmo qnd não estou bem</div>
+<div class="card">🌼 A sua alma tão leve</div>
+<div class="card">😌 Sua autenticidade</div>
+<div class="card">🤭 Seu jeito quando tá com vergonha</div>
+<div class="card">🤍 A paz que sinto com você</div>
+<div class="card">🥰 Quando mesmo ocupado, me escreve</div>
+<div class="card">👨‍👩‍👧‍👦 Como ama a sua família</div>
+<div class="card">🚗 Como ama carros altos</div>
+<div class="card">🌄 Passar o dia ao seu lado</div>
+<div class="card">🌻 Seu jeito é meu refúgio</div>
+<div class="card">💘 Eu amo você cada detalhe seu</div>
+</section>
+<button onclick="trocar('p2')">Próxima surpresa →</button>
+</section>
+
+<!-- ================= PAGINA 2 ================= -->
+<section id="p2" class="page p2">
+<div class="galaxia"></div>
+<div class="container" id="container"></div>
+<button onclick="trocar('p3')" style="position:fixed;bottom:30px;right:30px;padding:10px 18px;border-radius:10px;border:none;cursor:pointer;">Próxima surpresa →</button>
+</section>
+
+<!-- ================= PAGINA 3 ================= -->
+<section id="p3" class="page p3">
+<div class="universe" id="universe">
+<div class="galaxy"></div>
+<div class="lua"></div>
+<div class="sol"></div>
+<div class="title">
+<p>E em meio ao vasto universo... eu escolho você Leonel Augusto✨</p>
+</div>
+</div>
+</section>
+
+<script>
+/* TROCA DE PÁGINA */
+function trocar(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+
+document.querySelectorAll('.heart').forEach(h=>h.remove());
+}
+
+/* CORAÇÕES PAGINA 1 */
+function criarCoracao(){
+if(!document.getElementById('p1').classList.contains('active')) return;
+
+const coracoes=["❤️","🤍","💖","💘","💗","💕","💞","💚","✨","🌸"];
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML=coracoes[Math.floor(Math.random()*coracoes.length)];
+heart.style.left=Math.random()*95+"vw";
+heart.style.fontSize=(Math.random()*20+15)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+}
+setInterval(criarCoracao,500);
+
+/* PAGINA 2 MENSAGENS */
+const mensagens=[
+  "Tenho orgulho de você ❤️",
+  "Você me inspira ✨",
+  "Sou feliz com você 😊",
+  "Você é especial pra mim 🤍",
+  "Amo seu jeito 💙",
+  "Você me faz bem 🌷",
+  "Gosto da sua companhia 🌸",
+  "Você ilumina meus dias ✨",
+  "Te admiro muito 💫",
+  "Nossa conexão é linda 💞",
+  "Você é meu porto seguro ⚓❤️",
+  "Amo cada detalhe seu 🌹",
+  "No silêncio do meu coração, você é a canção mais bela que ecoa dentro dele 💖",
+  "Sou grata por ter você 🤍",
+  "Você é minha pessoa favorita 🥰",
+  "Amo seu sorriso 😊",
+  "Você é meu amor ❤️",
+  "Você é meu girassol 🌻",
+  "Você é meu programador favorito 💻✨",
+  "Sua risada é minha música preferida 🎶",
+  "Você é capaz de conquistar o mundo 🌎💪",
+  "Meu camisa 9 favorito ⚽🔥",
+  "Você é forte, corajoso e determinado 💪",
+  "Você é o melhor namorado do mundo ❤️",
+  "Eu te amo mais que tudo 💓",
+  "Você é a razão do meu sorriso bobo 😊",
+  "Com você a vida fica mais doce que chocolate 🍫",
+  "Você é meu pôr do sol em dias nublados 🌅",
+  "Me apaixono por você mais a cada dia 💘",
+  "No silêncio da noite, meu coração sussurra seu nome 🌙💖"
+];
+
+let mensagensDisponiveis = [...mensagens];
+
+const container=document.getElementById("container");
+let contador=0,finalMostrado=false;
+setInterval(()=>{
+if(!document.getElementById('p2').classList.contains('active'))return;
+if(finalMostrado)return;
+const msg=document.createElement('div');
+msg.classList.add('msg');
+if(mensagensDisponiveis.length === 0) return;
+const index = Math.floor(Math.random()*mensagensDisponiveis.length);
+msg.innerText = mensagensDisponiveis[index];
+mensagensDisponiveis.splice(index,1);
+msg.style.top=Math.random()*95+'vh';
+msg.style.left=Math.random()*95+'vw';
+msg.style.transform=`rotate(${Math.random()*20-10}deg)`;
+container.appendChild(msg);
+contador++;
+if(contador>=40){finalMostrado=true;setTimeout(()=>trocar('p3'),1500);} },3000);
+
+/* ESTRELAS PAGINA 2 */
+for(let i=0;i<60;i++){
+  const star=document.createElement("div");
+  star.style.position="fixed";
+  star.style.width=Math.random()*3+"px";
+  star.style.height=star.style.width;
+  star.style.background="white";
+  star.style.boxShadow="0 0 12px white";
+  star.style.animation="piscar 3s infinite alternate";
+  star.style.opacity=Math.random()*0.5;
+  star.style.top=Math.random()*100+"vh";
+  star.style.left=Math.random()*100+"vw";document.body.appendChild(star);
+} 
+
+function estrelaCadente(){
+  const star=document.createElement("div");
+  star.style.position="fixed";
+  star.style.top=Math.random()*50+"vh";
+  star.style.left="-50px";
+  star.style.width="3px";
+  star.style.height="3px";
+  star.style.background="white";
+  star.style.boxShadow="0 0 10px white";
+  star.style.transform="rotate(45deg)";
+  star.style.pointerEvents="none";
+  star.style.animation="cadente 2s linear forwards";
+  if(document.getElementById('p2').classList.contains('active'))document.getElementById('p2').appendChild(star);
+setTimeout(()=>star.remove(),2000);} 
+setInterval(()=>{if(Math.random()>0.7) estrelaCadente();},4000);
+
+/* UNIVERSO FINAL */
+const universe=document.getElementById('universe');
+for(let i=0;i<250;i++){
+  const star=document.createElement('div');
+  star.className='star';
+  const size=Math.random()*3+1;
+  star.style.width=size+'px';
+  star.style.height=size+'px';
+  star.style.top=Math.random()*100+'%';
+  star.style.left=Math.random()*100+'%';
+  star.style.animationDuration=(Math.random()*5+2)+'s';
+  universe.appendChild(star);} 
+
+function estrelaCadenteFinal(){
+  const star=document.createElement("div");
+  star.style.position="fixed";
+  star.style.top=Math.random()*70+"vh";
+  star.style.left="-50px";
+  star.style.width="3px";
+  star.style.height="2px";
+  star.style.background="white";
+  star.style.boxShadow="0 0 12px white";
+  star.style.transform="rotate(45deg)";
+  star.style.pointerEvents="none";
+  star.style.animation="cadente 1.5s linear forwards";
+  document.body.appendChild(star);
+  setTimeout(()=>star.remove(),1500);
+}
+
+setInterval(()=>{if(Math.random()>0.5) estrelaCadenteFinal();},1800);
+</script>
+
+<script>
+const musica = document.getElementById("musica");
+
+document.addEventListener("click", () => {
+  musica.play();
+}, { once:true });
+
+window.addEventListener("load", () => {
+  musica.muted = false;
+  musica.play().catch(()=>{});
+});
+
+document.addEventListener("click", () => {
+  musica.muted = false;
+  musica.play();
+}, { once:true });
+</script>
+
+</body>
+</html>
